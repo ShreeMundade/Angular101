@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row input-group">
+
+
+      <input class="form-control" placeholder="Bread" [(ngModel)]="breed" />
+      <input class="form-control" placeholder="Sub-Breed" [(ngModel)]="subBreed" />
+
+
+      <div class="input-group-append">
+        <button class="btn btn-primary" (click)="findDog()">Fetch!</button>
+
+      </div>
+    </div>
+    <ng-template [ngIf]="dogUrl">
+
+      <div class="text-center">
+        <img class="img-fluid img-thumbnail" [src]="dogUrl">
+      </div>
+      <button class="btn btn-primary btn-lg" [routerLink]="['list',breed,subBreed]">See More Dogs</button>
+    </ng-template>
+
+    <div *ngIf="failedToFetch">
+      <p>Failed to fetch dog from breed:<b>{{subBreed}} {{breed}}</b></p>
+    </div>
+
+  </div>
