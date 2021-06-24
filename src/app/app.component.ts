@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'puppers-app';
+  title = 'Just Puppers!';
+  breed:string='labrador' ;
+  findDog(){
+    console.log(this.breed);
+  }
 }
